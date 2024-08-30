@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="en">
 
-
-
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-T9LVFKB3GD');
-</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-     crossorigin="anonymous"></script>
+    gtag('config', 'G-T9LVFKB3GD');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+    crossorigin="anonymous"></script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,23 +24,29 @@
   <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
   <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
   <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
+
   <style>
-    .upi-pay1{
-      text-decoration: none;
-      color: black;
-      font-weight: bold !important;
-    
-    }
-    .lotte{
-      margin-top: -60px !important;
+   
+
+    #dark-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
   </style>
-
 </head>
 
 <body>
+  
 
-  <video id="background-video" autoplay loop muted >
+  <div id="dark-overlay"></div>
+
+  <video id="background-video" autoplay loop muted>
     <source src="vid.mp4" type="video/mp4">
   </video>
   <div id="tos-popup" class="hidden">
@@ -51,7 +55,7 @@
     <textarea id="tos-text" readonly> Welcome! Before proceeding, please take the time to review our Terms of Service and Privacy Policy. These documents outline important information regarding your rights and responsibilities when using our site.
 
 By clicking "Accept" below, you acknowledge that you have read, understood, and agree to abide by the terms and conditions set forth in our Terms of Service and Privacy Policy.
-  </textarea><button class="tosden" onclick="denytos()">Deny</button> <button class="tosacp" id="accept-tos">Accept</button>
+    </textarea><button class="tosden" onclick="denytos()">Deny</button> <button class="tosacp" id="accept-tos">Accept</button>
   </div>
   <div id="age-verification" class="hidden">
     <h2>Age Verification</h2>
@@ -61,23 +65,20 @@ By clicking "Accept" below, you acknowledge that you have read, understood, and 
   </div>
   <div id="dark-overlay"></div>
   <div class="wrapper">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 
-    
     <img src="icon.png" class="log" alt="logo">
-     
+
     <button id="video-btn" style="margin-bottom: -10px;" class="clk" onclick="redirect()">Video</button>
     <button id="chat-btn" class="clk" onclick="redirect2()">Chat</button>
-    
- 
   </div>
 
   <footer id="pc">
     <nav>
       <ul>
-        <li><a href="tos-2.html" >Terms of Service</a></li>
+        <li><a href="tos-2.html">Terms of Service</a></li>
         <li><a href="contact.html">Contact</a></li>
-       
+
         <li><a href="pos-2.html">Privacy Policy</a></li>
       </ul>
     </nav>
@@ -85,59 +86,72 @@ By clicking "Accept" below, you acknowledge that you have read, understood, and 
   <footer id="mobile">
     <nav id="nvv">
       <ul>
-        <li><a href="tos-2.html" >Terms</a></li>
+        <li><a href="tos-2.html">Terms</a></li>
         <li><a href="contact.html">Contact</a></li>
-       
+
         <li><a href="pos-2.html">Policy</a></li>
       </ul>
     </nav>
   </footer>
- 
-</body>
-<script src="index-2.html" type="module"></script>
-<script src="js/landing.js" type="module"></script>
-<script>
-function denytos() {
-  location.href = 'tosdeny.html';
-}
-function ageres() {
-  location.href = 'https://www.youtube.com/watch?v=020g-0hhCAU';
-}
-let con;
-function redirect() {
-   con = 0;
-    const tosPopup = document.getElementById('tos-popup');
-    tosPopup.classList.remove('hidden'); // Show the TOS popup
-    document.getElementById("video-btn").disabled = true;
-    document.getElementById('accept-tos').addEventListener('click', () => {
-      tosPopup.classList.add('hidden'); // Hide the TOS popup
-      const ageVerification = document.getElementById('age-verification');
-      ageVerification.classList.remove('hidden'); // Show the age verification popup
-    });
-  }
-  function redirect2() {
-   con = 1;
-    const tosPopup = document.getElementById('tos-popup');
-    tosPopup.classList.remove('hidden'); // Show the TOS popup
-    document.getElementById("video-btn").disabled = true;
-    document.getElementById('accept-tos').addEventListener('click', () => {
-      tosPopup.classList.add('hidden'); // Hide the TOS popup
-      const ageVerification = document.getElementById('age-verification');
-      ageVerification.classList.remove('hidden'); // Show the age verification popup
-    });
-  }
-  function confirmAge() {
-    if(con == 0){
-      location.href = 'video.html';
-    }else{
-      location.href = 'chat.html';
+
+  <script src="index-2.html" type="module"></script>
+  <script src="js/landing.js" type="module"></script>
+  <script>
+    function denytos() {
+      location.href = 'tosdeny.html';
     }
-    // Redirect to video page after age confirmation
-  
-  }
+    function ageres() {
+      location.href = 'https://www.youtube.com/watch?v=020g-0hhCAU';
+    }
+    let con;
+    function redirect() {
+      con = 0;
+      const tosPopup = document.getElementById('tos-popup');
+      tosPopup.classList.remove('hidden'); // Show the TOS popup
+      document.getElementById("video-btn").disabled = true;
+      document.getElementById('accept-tos').addEventListener('click', () => {
+        tosPopup.classList.add('hidden'); // Hide the TOS popup
+        const ageVerification = document.getElementById('age-verification');
+        ageVerification.classList.remove('hidden'); // Show the age verification popup
+      });
+    }
+    function redirect2() {
+      con = 1;
+      const tosPopup = document.getElementById('tos-popup');
+      tosPopup.classList.remove('hidden'); // Show the TOS popup
+      document.getElementById("video-btn").disabled = true;
+      document.getElementById('accept-tos').addEventListener('click', () => {
+        tosPopup.classList.add('hidden'); // Hide the TOS popup
+        const ageVerification = document.getElementById('age-verification');
+        ageVerification.classList.remove('hidden'); // Show the age verification popup
+      });
+    }
+    function confirmAge() {
+      if (con == 0) {
+        location.href = 'video.html';
+      } else {
+        location.href = 'chat.html';
+      }
+      // Redirect to video page after age confirmation
+    }
 
-</script>
+    // Onam Popup Functions
+    function showOnamPopup() {
+      document.getElementById('onam-popup').style.display = 'block';
+      document.getElementById('dark-overlay').style.display = 'block';
+    }
 
+    function closeOnamPopup() {
+      document.getElementById('onam-popup').style.display = 'none';
+      document.getElementById('dark-overlay').style.display = 'none';
+    }
 
+    // Show the Onam popup on page load
+    window.onload = function () {
+      showOnamPopup();
+    };
+  </script>
+
+</body>
 
 </html>
