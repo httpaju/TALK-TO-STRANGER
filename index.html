@@ -192,65 +192,62 @@
   </footer>
 
   <script>
-        // Get elements
-        const startChatButton = document.getElementById('start-chat');
-        const chatModal = document.getElementById('chat-modal');
-        const videoChatButton = document.getElementById('video-chat');
-        const textChatButton = document.getElementById('text-chat');
-        const termsModal = document.getElementById('terms-modal');
-        const agreeButton = document.getElementById('agree');
-        const ageModal = document.getElementById('age-modal');
-        const ageConfirmButton = document.getElementById('age-confirm');
-        const userAgeInput = document.getElementById('user-age');
+    // Get elements
+    const startChatButton = document.getElementById('start-chat');
+    const chatModal = document.getElementById('chat-modal');
+    const videoChatButton = document.getElementById('video-chat');
+    const textChatButton = document.getElementById('text-chat');
+    const termsModal = document.getElementById('terms-modal');
+    const agreeButton = document.getElementById('agree');
+    const ageModal = document.getElementById('age-modal');
+    const ageConfirmYesButton = document.getElementById('age-confirm-yes');
+    const ageConfirmNoButton = document.getElementById('age-confirm-no');
 
-        // Show age modal when "Start Chatting" is clicked
-        startChatButton.addEventListener('click', function() {
-            ageModal.style.display = 'block';
-        });
+    // Show age modal when "Start Chatting" is clicked
+    startChatButton.addEventListener('click', function() {
+        ageModal.style.display = 'block';
+    });
 
-        // Age confirmation logic
-        ageConfirmButton.addEventListener('click', function() {
-            const age = parseInt(userAgeInput.value);
-            if (age >= 18) {
-                ageModal.style.display = 'none'; // Close age modal
-                chatModal.style.display = 'block'; // Show chat modal
-            } else {
-                alert("You must be 18 years or older to use this chat service.");
-                ageModal.style.display = 'none'; // Close age modal
-            }
-        });
+    // Age confirmation logic
+    ageConfirmYesButton.addEventListener('click', function() {
+        ageModal.style.display = 'none';
+        termsModal.style.display = 'block';
+    });
 
-        // Show terms modal when "Video Chat" or "Text Chat" is clicked
-        videoChatButton.addEventListener('click', function() {
-            chatModal.style.display = 'none'; // Close the chat modal
-            termsModal.style.display = 'block'; // Show terms modal
-        });
+    ageConfirmNoButton.addEventListener('click', function() {
+        window.location.href = 'https://www.youtube.com/live/8sWurm5nKsI?si=OG3efyV8GIAar_hp';
+    });
 
-        textChatButton.addEventListener('click', function() {
-            chatModal.style.display = 'none'; // Close the chat modal
-            termsModal.style.display = 'block'; // Show terms modal
-        });
+    // Show chat modal after agreeing to terms
+    agreeButton.addEventListener('click', function() {
+        termsModal.style.display = 'none';
+        chatModal.style.display = 'block';
+    });
 
-        // Close terms modal when "I Agree" is clicked
-        agreeButton.addEventListener('click', function() {
-            termsModal.style.display = 'none';
-            alert('You can now start chatting!');
-        });
+    // Redirect to appropriate pages on button clicks
+    videoChatButton.addEventListener('click', function() {
+        window.location.href = 'video.html';
+    });
 
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == chatModal) {
-                chatModal.style.display = 'none';
-            }
-            if (event.target == termsModal) {
-                termsModal.style.display = 'none';
-            }
-            if (event.target == ageModal) {
-                ageModal.style.display = 'none';
-            }
+    textChatButton.addEventListener('click', function() {
+        window.location.href = 'chat.html';
+    });
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        if (event.target == chatModal) {
+            chatModal.style.display = 'none';
         }
-    </script>
+        if (event.target == termsModal) {
+            termsModal.style.display = 'none';
+        }
+        if (event.target == ageModal) {
+            ageModal.style.display = 'none';
+        }
+    }
+  </script>
 
 </body>
 
 </html>
+
