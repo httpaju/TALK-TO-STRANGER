@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
   <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
   <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!"> 
-    <style>
+     <style>
         /* General Reset */
         * {
             margin: 0;
@@ -50,12 +50,14 @@
             padding: 50px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: zoomIn 1s ease-out; /* Zoom in animation */
         }
 
         /* Logo Styling */
         .logo img {
             width: 120px;
             margin-bottom: 30px;
+            animation: rotate 2s infinite linear; /* Rotate logo animation */
         }
 
         /* Main Heading */
@@ -65,13 +67,15 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 3px;
+            animation: shake 0.5s infinite; /* Shake animation */
         }
 
         /* Subheading */
         p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             color: #b0b0b0;
             margin-bottom: 30px;
+            animation: flash 1s infinite alternate; /* Flashing text animation */
         }
 
         /* Button Styling */
@@ -79,18 +83,20 @@
             display: inline-block;
             background: #00ffff;
             color: black;
-            padding: 15px 40px;
+            padding: 20px 50px;
             border-radius: 30px;
-            font-size: 1.1em;
+            font-size: 1.5em;
             font-weight: bold;
             text-transform: uppercase;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulse 1.5s infinite; /* Pulse animation */
         }
 
         .button:hover {
             background-color: #00d4d4;
-            transform: scale(1.05);
+            transform: scale(1.2) rotate(10deg); /* Scale and rotate on hover */
+            animation: none; /* Disable pulse on hover */
         }
 
         /* Pop-up Styles */
@@ -107,11 +113,11 @@
             text-align: center;
             z-index: 1001;
             border-radius: 10px;
-            animation: fadeIn 0.3s ease;
+            animation: bounceIn 0.5s ease; /* Bounce in animation */
         }
 
         .popup button, .terms-popup button, .chat-popup button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             margin: 10px;
             border: none;
             border-radius: 5px;
@@ -119,11 +125,13 @@
             color: black;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: popIn 0.5s forwards; /* Pop-in animation */
         }
 
         .popup button:hover, .terms-popup button:hover, .chat-popup button:hover {
             background-color: #00d4d4;
+            transform: scale(1.2) rotate(-5deg); /* Scale and rotate on hover */
         }
 
         /* Overlay for pop-ups */
@@ -139,6 +147,15 @@
         }
 
         /* Footer Styling */
+        footer a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00d4d4; /* Change color on hover */
+        }
+
         footer {
             position: absolute;
             bottom: 20px;
@@ -146,16 +163,8 @@
             transform: translateX(-50%);
             color: #808080;
             font-size: 0.9em;
+            text-align: center; /* Center align the footer text */
         }
-        footer a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #00d4d4; /* Change color on hover */
-}
-
 
         /* Fade-in Animation */
         @keyframes fadeIn {
@@ -166,6 +175,94 @@ footer a:hover {
             to {
                 opacity: 1;
                 transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Zoom-in Animation */
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Shake Animation */
+        @keyframes shake {
+            0%, 100% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-5px, 0);
+            }
+            50% {
+                transform: translate(5px, 0);
+            }
+            75% {
+                transform: translate(-5px, 0);
+            }
+        }
+
+        /* Flash Animation */
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Rotate Animation */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Bounce In Animation */
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Pop-in Animation */
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
             }
         }
     </style>
@@ -211,14 +308,12 @@ footer a:hover {
     </div>
 
     <!-- Footer Section -->
-    <!-- Footer Section -->
-<footer>
-    &copy; 2024 AJ APPLICATIONS. All rights reserved. | 
-    <a href="pos-2.html" style="color: #00ffff;">Privacy Policy</a> | 
-    <a href="tos-2.html" style="color: #00ffff;">Terms and Conditions</a> | 
-    <a href="contact.html" style="color: #00ffff;">Contact Us</a>
-</footer>
-
+    <footer>
+        &copy; 2024 AJ APPLICATIONS. All rights reserved. | 
+        <a href="pos-2.html" style="color: #00ffff;">Privacy Policy</a> | 
+        <a href="tos-2.html" style="color: #00ffff;">Terms and Conditions</a> | 
+        <a href="contact.html" style="color: #00ffff;">Contact Us</a>
+    </footer>
 
     <!-- JavaScript for pop-up functionality -->
     <script>
