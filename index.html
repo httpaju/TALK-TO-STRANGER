@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
   <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
   <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!"> 
-     <style>
+    <style>
         /* General Reset */
         * {
             margin: 0;
@@ -57,7 +57,7 @@
         .logo img {
             width: 120px;
             margin-bottom: 30px;
-            animation: rotate 2s infinite linear; /* Rotate logo animation */
+            /* No rotation animation applied */
         }
 
         /* Main Heading */
@@ -226,16 +226,6 @@
             }
         }
 
-        /* Rotate Animation */
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
         /* Bounce In Animation */
         @keyframes bounceIn {
             0% {
@@ -298,6 +288,7 @@
         <h3>Terms and Conditions</h3>
         <p>By continuing, you agree to our terms and conditions.</p>
         <button onclick="acceptTerms()">Accept</button>
+        <button onclick="declineTerms()">Decline</button>
     </div>
 
     <!-- Pop-up 3: Chat Options -->
@@ -329,7 +320,8 @@
             if (choice === 'yes') {
                 document.getElementById('terms-popup').style.display = 'block';
             } else {
-                window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Cartoon video URL
+                alert("You must be 18 or older to enter.");
+                document.getElementById('overlay').style.display = 'none'; // Hide overlay if not 18
             }
         }
 
@@ -339,11 +331,19 @@
             document.getElementById('chat-popup').style.display = 'block';
         }
 
-        // Chat options (Redirect to Video Chat or Text Chat pages)
+        // Decline terms
+        function declineTerms() {
+            alert("You must accept the terms to proceed.");
+            document.getElementById('terms-popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        // Redirect to video chat page
         function startVideoChat() {
             window.location.href = 'video.html';  // Redirect to video.html
         }
 
+        // Redirect to text chat page
         function startTextChat() {
             window.location.href = 'chat.html';  // Redirect to chat.html
         }
