@@ -354,7 +354,7 @@
 
     </script>
 <script>
-    const socket = io('https://httpaju.github.io/TALK-TO-STRANGER/'); // Replace with the deployed server URL
+    const socket = io('wss://lotta.lol'); // Replace with the deployed server URL
     socket.on('userCount', (count) => {
         document.getElementById('userCount').innerText = count;
     });
