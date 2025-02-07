@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from lotta.lol/video by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Aug 2024 10:52:07 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-  crossorigin="anonymous"></script>
-  <title>AJ APPLICATIONS</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5558664743876366"
+     crossorigin="anonymous"></script>
+  <title>Lotta</title>
   <link rel="icon" href="icon.png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/phone.css" rel="stylesheet" />
   <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
@@ -23,9 +21,9 @@
   <meta name="favicon/theme-color" content="#333333">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Lotta">
-  <meta property="og:url" content="https://lotta.lol/">
-  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-  <meta property="og:description" content="Lotta offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with Lottas!">
+  <meta property="og:url" content="https://aj-talk-to-stranger.onrender.com/">
+  <meta property="og:image" content="https://aj-talk-to-stranger.onrender.com/logo.png">
+  <meta property="og:description" content="PANDA offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with PANDAS!">
 
 </head>
 
@@ -34,11 +32,11 @@
     <!-- top bar -->
     <div id="top-bar">
       <div id="logo">
-        <img src="icon.svg" width="200px" alt="Lotta" class="lott">
+    <a href="https://lotta.lol/" >   <img src="logvid.png" width="100px" height="200px" alt="Lotta" class="lott"></a>
       </div>
       <div id="top-right">
         <div id="peopleOnline">
-          <p style="color: black;" id="beta">Under Beta Stage</p>
+          <p style="color: black;" id="beta">Updates Soon</p>
         </div>
         <button id="report-btn" style="background-color: red; margin-right: 22px; color: white; border: none; padding-right: 12px; padding-left: 12px; font-size: 15px; font-weight: bold; border-radius: 15px;" class="button2">Report</button> 
         <button id="feedback-btn" class="button">Feedbacks</button>
@@ -64,8 +62,10 @@
     <!-- video container -->
     <div id="videos">
       <div id="peer">
-        <video class="video-player mirror" id="video-peer" autoplay playsinline></video>
-        <div id="peer-video-loader"></div>
+        <video class="video-player mirror" style="background-color: #666666;" id="video-peer" autoplay playsinline></video>
+        <div id="peer-video-loader">
+          <img id="gif-loader" src="lotta.gif"  alt="Loading..." width="400px">
+        </div>
       </div>
       <div id="self">
         <video class="video-player mirror" id="video-self" autoplay playsinline muted="muted"></video>
@@ -102,10 +102,33 @@
       </form>
     </div>
   </div>
+  
+  <script>
+    function addDarkmodeWidget() {
 
-  <script defer src="js/main.js"></script>
-  <script defer src="js/video.js" type="module"></script>
+      const options = {
+  bottom: '64px', 
+  right: '12px', 
+  left: 'unset', 
+  time: '0.5s', 
+  mixColor: '#fff', 
+  backgroundColor: '#fff',  
+  buttonColorDark: '#3e3e42', 
+  buttonColorLight: '#3e3e42',
+  saveInCookies: true, 
+  label: '🌙 ',
+  autoMatchOsTheme: true 
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+     
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+  </script>
+
+  <script defer src="./js/main.js"></script>
+  <script defer src="./js/video.js" type="module"></script>
 </body>
-
 
 </html>
