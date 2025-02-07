@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T9LVFKB3GD');
+    </script>
 
-    gtag('config', 'G-T9LVFKB3GD');
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-    crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJ APPLICATIONS</title>
-  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
-  <link rel="stylesheet" href="style.css">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AJ">
-  <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
-  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-  <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+        crossorigin="anonymous"></script>
 
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ APPLICATIONS</title>
+    <meta name="description" content="A video chat platform where you can meet new people and have fun conversations.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AJ">
+    <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
+    <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
+    <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
+
+    <!-- Internal CSS -->
     <style>
-        /* General Styles */
         body {
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        
+
+        main {
+            flex: 1;
+        }
+
         h1 {
             font-size: 2.5rem;
             margin-top: 50px;
@@ -65,87 +76,43 @@
             opacity: 0.8;
         }
 
-        /* Popup Styles */
-        #joinPopup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background: white;
-            color: black;
+        /* Footer Styles */
+        footer {
+            background: #1a1a1a;
             padding: 20px;
-            border-radius: 10px;
+            color: #ccc;
+            font-size: 0.9rem;
             text-align: center;
         }
 
-        input {
-            padding: 10px;
-            width: 80%;
-            margin-top: 10px;
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
         }
 
-        .popup-btn {
-            padding: 10px 20px;
-            margin-top: 10px;
-            cursor: pointer;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <h1>PANDA TALK</h1>
-    <p>Connect with strangers via text or video chat.</p>
+    <main>
+        <h1>PANDA TALK</h1>
+        <p>Connect with strangers via text or video chat.</p>
 
-    <!-- Text Chat Button -->
-    <a href="javascript:void(0);" class="btn btn-text" onclick="openPopup('text')">Text Chat</a>
+        <!-- Text Chat Button -->
+        <a href="chat" class="btn btn-text">Text Chat</a>
 
-    <!-- Video Chat Button -->
-    <a href="javascript:void(0);" class="btn btn-video" onclick="openPopup('video')">Video Chat</a>
+        <!-- Video Chat Button -->
+        <a href="video" class="btn btn-video">Video Chat</a>
+    </main>
 
-    <!-- Popup for Name Input -->
-    <div id="joinPopup">
-        <div class="popup-content">
-            <h2>Enter Your Name</h2>
-            <input type="text" id="username" placeholder="Your Name">
-            <br><br>
-            <button class="popup-btn" onclick="startChat()">Start Chat</button>
-            <button class="popup-btn" onclick="closePopup()">Cancel</button>
-        </div>
-    </div>
-
-    <script>
-        let chatType = '';
-
-        function openPopup(type) {
-            chatType = type;
-            document.getElementById('joinPopup').style.display = 'flex';
-        }
-
-        function closePopup() {
-            document.getElementById('joinPopup').style.display = 'none';
-        }
-
-        function startChat() {
-            let username = document.getElementById("username").value.trim();
-            if (username !== "") {
-                if (chatType === 'text') {
-                    window.location.href = "chat.html?user=" + encodeURIComponent(username);
-                } else if (chatType === 'video') {
-                    window.location.href = "video.html?user=" + encodeURIComponent(username);
-                }
-            } else {
-                alert("Please enter your name!");
-            }
-        }
-    </script>
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 AJ APPLICATIONS. All rights reserved. <br>
+        <a href="tos-2">Terms of Service</a> | <a href="pos-2">Privacy Policy</a>
+    </footer>
 
 </body>
 </html>
