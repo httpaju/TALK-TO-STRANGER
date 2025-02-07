@@ -1,118 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-T9LVFKB3GD');
-    </script>
+  <!-- Google Analytics & Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-T9LVFKB3GD');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+    crossorigin="anonymous"></script>
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-        crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Talk to Stranger</title>
+  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AJ Talk to Stranger">
+  <meta property="og:url" content="https://aj-talk-to-stranger.onrender.com/">
+  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
+  <meta property="og:description"
+    content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun!">
+  
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    /* Light Mode */
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
 
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ APPLICATIONS</title>
-    <meta name="description" content="A video chat platform where you can meet new people and have fun conversations.">
+    /* Dark Mode */
+    body.dark-mode {
+      background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+      color: white;
+    }
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="AJ">
-    <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
-    <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-    <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-    <!-- Internal CSS -->
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
 
-        main {
-            flex: 1;
-        }
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-top: 50px;
-        }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-        /* Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin: 10px;
-            text-decoration: none;
-        }
+    .btn {
+      background: #ff5733;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+    }
 
-        .btn-text {
-            background: #00aaff;
-        }
+    .btn:hover {
+      background: #ff2e00;
+    }
 
-        .btn-video {
-            background: #ff0066;
-        }
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
 
-        .btn:hover {
-            opacity: 0.8;
-        }
+    .theme-toggle {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-        /* Footer Styles */
-        footer {
-            background: #1a1a1a;
-            padding: 20px;
-            color: #ccc;
-            font-size: 0.9rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .theme-toggle:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
+    <img src="logo.png" alt="AJ Talk to Stranger Logo" class="logo">
+    <div class="title">Welcome to PANDA Talk</div>
+    <p>Connect with new people instantly!</p>
 
-    <main>
-        <h1>PANDA TALK</h1>
-        <p>Connect with strangers via text or video chat.</p>
+    <div class="btn-container">
+      <button class="btn" onclick="startChat()">Text Chat</button>
+      <button class="btn" onclick="startVideo()">Video Chat</button>
+    </div>
 
-        <!-- Text Chat Button -->
-        <a href="chat" class="btn btn-text">Text Chat</a>
+    <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
 
-        <!-- Video Chat Button -->
-        <a href="video" class="btn btn-video">Video Chat</a>
-    </main>
+    <div class="footer">© 2025 AJ Applications. All Rights Reserved.</div>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 AJ APPLICATIONS. All rights reserved. <br>
-        <a href="tos-2">Terms of Service</a> | <a href="pos-2">Privacy Policy</a>
-    </footer>
+  <script>
+    function startChat() {
+      window.location.href = "chat"; // Change this to your actual chat URL
+    }
 
+    function startVideo() {
+      window.location.href = "video"; // Change this to your actual video chat URL
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+
+      // Save user preference
+      localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
+    }
+
+    // Load saved theme preference
+    window.onload = function () {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
 </body>
+
 </html>
