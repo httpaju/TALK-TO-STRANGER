@@ -89,15 +89,24 @@
       opacity: 0.7;
     }
 
+    /* Floating Theme Button */
     .theme-toggle {
-      margin-top: 20px;
-      padding: 10px 20px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       background: #007bff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 50%;
       cursor: pointer;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .theme-toggle:hover {
@@ -117,14 +126,15 @@
       <button class="btn" onclick="startVideo()">Video Chat</button>
     </div>
 
-    <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
-
-    <div class="footer">© 2025 AJ Applications. All Rights Reserved.</div>
+    <div class="footer">© 2025 AJ APPLICATIONS. All Rights Reserved.</div>
   </div>
+
+  <!-- Floating Theme Button -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
 
   <script>
     function startChat() {
-      window.location.href = "chat"; // Change this to your actual chat URL
+      window.location.href = "text"; // Change this to your actual chat URL
     }
 
     function startVideo() {
@@ -135,6 +145,10 @@
       const body = document.body;
       body.classList.toggle("dark-mode");
 
+      // Update button icon
+      const themeButton = document.querySelector('.theme-toggle');
+      themeButton.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+
       // Save user preference
       localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
     }
@@ -143,6 +157,7 @@
     window.onload = function () {
       if (localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark-mode");
+        document.querySelector('.theme-toggle').textContent = "☀️";
       }
     };
   </script>
