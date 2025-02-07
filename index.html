@@ -1,428 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Panda Talk - Connect with Strangers</title>
-  <meta name="description" content="Panda Talk is a modern platform to connect with strangers via video or text chat.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- External CSS -->
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9LVFKB3GD');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ APPLICATIONS</title>
+  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="panda-talk-logo.png">
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .container {
-      text-align: center;
-      background: rgba(30, 30, 30, 0.95);
-      padding: 50px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-      animation: zoomIn 1s ease-out;
-    }
-    /* Logo Styling */
-    .logo {
-      margin-bottom: 30px;
-    }
-    .logo img {
-      max-width: 200px;
-      display: block;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 3em;
-      color: #00ffff;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-    p {
-      font-size: 1.5em;
-      color: #b0b0b0;
-      margin-bottom: 30px;
-    }
-    .button {
-      display: inline-block;
-      background: #00ffff;
-      color: #000;
-      padding: 20px 50px;
-      border-radius: 30px;
-      font-size: 1.5em;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .button:hover {
-      background-color: #00d4d4;
-      transform: scale(1.1);
-    }
-    /* Animations */
-    @keyframes zoomIn {
-      from {
-        transform: scale(0);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-    /* Popup and Overlay Styles */
-    .overlay,
-    .popup,
-    .terms-popup,
-    .chat-popup {
-      display: none;
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.95);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-      text-align: center;
-      z-index: 1001;
-      border-radius: 10px;
-      padding: 20px;
-      animation: slideIn 0.5s ease-out;
-    }
-    .overlay {
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      transform: none;
-    }
-    @keyframes slideIn {
-      from {
-        transform: translate(-50%, -60%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-    }
-    .popup button,
-    .terms-popup button,
-    .chat-popup button {
-      padding: 15px 30px;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #00ffff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .popup button:hover,
-    .terms-popup button:hover,
-    .chat-popup button:hover {
-      background-color: #00d4d4;
-      transform: scale(1.1);
-    }
-  </style>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AJ">
+  <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
+  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
+  <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 50px;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        .btn-text {
+            background: #00aaff;
+        }
+
+        .btn-video {
+            background: #ff0066;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Popup Styles */
+        #joinPopup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        .popup-btn {
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Logo Section -->
-    <div class="logo">
-      <img src="panda-talk-logo.png" alt="Panda Talk Logo">
+
+    <h1>PANDA TALK</h1>
+    <p>Connect with strangers via text or video chat.</p>
+
+    <!-- Text Chat Button -->
+    <a href="javascript:void(0);" class="btn btn-text" onclick="openPopup('text')">Text Chat</a>
+
+    <!-- Video Chat Button -->
+    <a href="javascript:void(0);" class="btn btn-video" onclick="openPopup('video')">Video Chat</a>
+
+    <!-- Popup for Name Input -->
+    <div id="joinPopup">
+        <div class="popup-content">
+            <h2>Enter Your Name</h2>
+            <input type="text" id="username" placeholder="Your Name">
+            <br><br>
+            <button class="popup-btn" onclick="startChat()">Start Chat</button>
+            <button class="popup-btn" onclick="closePopup()">Cancel</button>
+        </div>
     </div>
-    <!-- Title and Description -->
-    <h1>Panda Talk</h1>
-    <p>Connect with strangers through real-time video or text chat.</p>
-    <!-- Call-to-Action Button -->
-    <a href="#" class="button" onclick="showPopup()">Join Now</a>
-  </div>
 
-  <!-- Overlay and Popups -->
-  <div class="overlay" id="overlay"></div>
-  <div class="popup" id="age-popup">
-    <h3>Are you 18 or older?</h3>
-    <button onclick="handleAge('yes')">I am 18</button>
-    <button onclick="handleAge('no')">I am not 18</button>
-  </div>
-  <div class="terms-popup" id="terms-popup">
-    <h3>Terms and Conditions</h3>
-    <p>By continuing, you agree to our terms and conditions.</p>
-    <button onclick="acceptTerms()">Accept</button>
-    <button onclick="declineTerms()">Decline</button>
-  </div>
-  <div class="chat-popup" id="chat-popup">
-    <h3>Choose Your Chat Type</h3>
-    <button onclick="startVideoChat()">Video Chat</button>
-    <button onclick="startTextChat()">Text Chat</button>
-  </div>
+    <script>
+        let chatType = '';
 
-  <!-- JavaScript for Pop-up Functionality -->
-  <script>
-    function showPopup() {
-      document.getElementById('overlay').style.display = 'block';
-      document.getElementById('age-popup').style.display = 'block';
-    }
-    function handleAge(choice) {
-      document.getElementById('age-popup').style.display = 'none';
-      if (choice === 'yes') {
-        document.getElementById('terms-popup').style.display = 'block';
-      } else {
-        alert("You must be 18 or older to enter.");
-        document.getElementById('overlay').style.display = 'none';
-      }
-    }
-    function acceptTerms() {
-      document.getElementById('terms-popup').style.display = 'none';
-      document.getElementById('chat-popup').style.display = 'block';
-    }
-    function declineTerms() {
-      alert("You must accept the terms to proceed.");
-      document.getElementById('terms-popup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function startVideoChat() {
-      window.location.href = 'video';
-    }
-    function startTextChat() {
-      window.location.href = 'chat';
-    }
-  </script>
+        function openPopup(type) {
+            chatType = type;
+            document.getElementById('joinPopup').style.display = 'flex';
+        }
 
-  <!-- Old Footer -->
-  <footer>
-    © 2024 AJ APPLICATIONS. All rights reserved. | 
-    <a href="pos-2" style="color: #00ffff;">Privacy Policy</a> | 
-    <a href="tos-2" style="color: #00ffff;">Terms and Conditions</a> | 
-    <a href="contact" style="color: #00ffff;">Contact Us</a>
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Panda Talk - Connect with Strangers</title>
-  <meta name="description" content="Panda Talk is a modern platform to connect with strangers via video or text chat.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="panda-talk-logo.png">
-  <style>
-    /* Basic Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .container {
-      text-align: center;
-      background: rgba(30, 30, 30, 0.95);
-      padding: 50px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-      animation: zoomIn 1s ease-out;
-    }
-    /* Logo Styling */
-    .logo {
-      margin-bottom: 30px;
-    }
-    .logo img {
-      max-width: 200px;
-      display: block;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 3em;
-      color: #00ffff;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-    p {
-      font-size: 1.5em;
-      color: #b0b0b0;
-      margin-bottom: 30px;
-    }
-    .button {
-      display: inline-block;
-      background: #00ffff;
-      color: #000;
-      padding: 20px 50px;
-      border-radius: 30px;
-      font-size: 1.5em;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .button:hover {
-      background-color: #00d4d4;
-      transform: scale(1.1);
-    }
-    /* Animations */
-    @keyframes zoomIn {
-      from {
-        transform: scale(0);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-    /* Popup and Overlay Styles */
-    .overlay,
-    .popup,
-    .terms-popup,
-    .chat-popup {
-      display: none;
-      position: fixed;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.95);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-      text-align: center;
-      z-index: 1001;
-      border-radius: 10px;
-      padding: 20px;
-      animation: slideIn 0.5s ease-out;
-    }
-    .overlay {
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      z-index: 1000;
-      top: 0;
-      left: 0;
-      transform: none;
-    }
-    @keyframes slideIn {
-      from {
-        transform: translate(-50%, -60%);
-        opacity: 0;
-      }
-      to {
-        transform: translate(-50%, -50%);
-        opacity: 1;
-      }
-    }
-    .popup button,
-    .terms-popup button,
-    .chat-popup button {
-      padding: 15px 30px;
-      margin: 10px;
-      border: none;
-      border-radius: 5px;
-      background-color: #00ffff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .popup button:hover,
-    .terms-popup button:hover,
-    .chat-popup button:hover {
-      background-color: #00d4d4;
-      transform: scale(1.1);
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Logo Section -->
-    <div class="logo">
-      <img src="panda-talk-logo.png" alt="Panda Talk Logo">
-    </div>
-    <!-- Title and Description -->
-    <h1>Panda Talk</h1>
-    <p>Connect with strangers through real-time video or text chat.</p>
-    <!-- Call-to-Action Button -->
-    <a href="#" class="button" onclick="showPopup()">Join Now</a>
-  </div>
+        function closePopup() {
+            document.getElementById('joinPopup').style.display = 'none';
+        }
 
-  <!-- Overlay and Popups -->
-  <div class="overlay" id="overlay"></div>
-  <div class="popup" id="age-popup">
-    <h3>Are you 18 or older?</h3>
-    <button onclick="handleAge('yes')">I am 18</button>
-    <button onclick="handleAge('no')">I am not 18</button>
-  </div>
-  <div class="terms-popup" id="terms-popup">
-    <h3>Terms and Conditions</h3>
-    <p>By continuing, you agree to our terms and conditions.</p>
-    <button onclick="acceptTerms()">Accept</button>
-    <button onclick="declineTerms()">Decline</button>
-  </div>
-  <div class="chat-popup" id="chat-popup">
-    <h3>Choose Your Chat Type</h3>
-    <button onclick="startVideoChat()">Video Chat</button>
-    <button onclick="startTextChat()">Text Chat</button>
-  </div>
+        function startChat() {
+            let username = document.getElementById("username").value.trim();
+            if (username !== "") {
+                if (chatType === 'text') {
+                    window.location.href = "chat.html?user=" + encodeURIComponent(username);
+                } else if (chatType === 'video') {
+                    window.location.href = "video.html?user=" + encodeURIComponent(username);
+                }
+            } else {
+                alert("Please enter your name!");
+            }
+        }
+    </script>
 
-  <!-- JavaScript for Pop-up Functionality -->
-  <script>
-    function showPopup() {
-      document.getElementById('overlay').style.display = 'block';
-      document.getElementById('age-popup').style.display = 'block';
-    }
-    function handleAge(choice) {
-      document.getElementById('age-popup').style.display = 'none';
-      if (choice === 'yes') {
-        document.getElementById('terms-popup').style.display = 'block';
-      } else {
-        alert("You must be 18 or older to enter.");
-        document.getElementById('overlay').style.display = 'none';
-      }
-    }
-    function acceptTerms() {
-      document.getElementById('terms-popup').style.display = 'none';
-      document.getElementById('chat-popup').style.display = 'block';
-    }
-    function declineTerms() {
-      alert("You must accept the terms to proceed.");
-      document.getElementById('terms-popup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-    function startVideoChat() {
-      window.location.href = 'video';
-    }
-    function startTextChat() {
-      window.location.href = 'chat';
-    }
-  </script>
-
-  <!-- Old Footer -->
-  <footer>
-    © 2024 AJ APPLICATIONS. All rights reserved. | 
-    <a href="pos-2" style="color: #00ffff;">Privacy Policy</a> | 
-    <a href="tos-2" style="color: #00ffff;">Terms and Conditions</a> | 
-    <a href="contact" style="color: #00ffff;">Contact Us</a>
-  </footer>
 </body>
 </html>
