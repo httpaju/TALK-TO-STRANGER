@@ -1,417 +1,428 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-T9LVFKB3GD');
-  </script>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJ APPLICATIONS</title>
-  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
+  <meta charset="UTF-8">
+  <title>Panda Talk - Connect with Strangers</title>
+  <meta name="description" content="Panda Talk is a modern platform to connect with strangers via video or text chat.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AJ">
-  <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
-  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-  <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!"> 
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #1a1a1a;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        /* Container for the main content */
-        .container {
-            text-align: center;
-            background: rgba(30, 30, 30, 0.9);
-            padding: 50px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            animation: zoomIn 1s ease-out; /* Zoom in animation */
-        }
-
-        /* Logo Styling */
-        .logo img {
-            width: 120px;
-            margin-bottom: 30px;
-            /* No rotation animation applied */
-        }
-
-        /* Main Heading */
-        h1 {
-            font-size: 3em;
-            color: #00ffff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: shake 0.5s infinite; /* Shake animation */
-        }
-
-        /* Subheading */
-        p {
-            font-size: 1.5em;
-            color: #b0b0b0;
-            margin-bottom: 30px;
-            animation: flash 1s infinite alternate; /* Flashing text animation */
-        }
-
-        /* Button Styling */
-        .button {
-            display: inline-block;
-            background: #00ffff;
-            color: black;
-            padding: 20px 50px;
-            border-radius: 30px;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: pulse 1.5s infinite; /* Pulse animation */
-        }
-
-        .button:hover {
-            background-color: #00d4d4;
-            transform: scale(1.2) rotate(10deg); /* Scale and rotate on hover */
-            animation: none; /* Disable pulse on hover */
-        }
-
-        /* Pop-up Styles */
-        .popup, .terms-popup, .chat-popup {
-            display: none;
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-            text-align: center;
-            z-index: 1001;
-            border-radius: 10px;
-            animation: bounceIn 0.5s ease; /* Bounce in animation */
-        }
-
-        .popup button, .terms-popup button, .chat-popup button {
-            padding: 15px 30px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #00ffff;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: popIn 0.5s forwards; /* Pop-in animation */
-        }
-
-        .popup button:hover, .terms-popup button:hover, .chat-popup button:hover {
-            background-color: #00d4d4;
-            transform: scale(1.2) rotate(-5deg); /* Scale and rotate on hover */
-        }
-
-        /* Overlay for pop-ups */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-        }
-
-        /* Footer Styling */
-        footer a {
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: #00d4d4; /* Change color on hover */
-        }
-
-        footer {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #808080;
-            font-size: 0.9em;
-            text-align: center; /* Center align the footer text */
-        }
-
-        /* Fade-in Animation */
-     @keyframes slideIn {
-    from {
-        transform: translateY(-30px);
+  <link rel="icon" type="image/png" href="panda-talk-logo.png">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      animation: zoomIn 1s ease-out;
+    }
+    /* Logo Styling */
+    .logo {
+      margin-bottom: 30px;
+    }
+    .logo img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    p {
+      font-size: 1.5em;
+      color: #b0b0b0;
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      background: #00ffff;
+      color: #000;
+      padding: 20px 50px;
+      border-radius: 30px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .button:hover {
+      background-color: #00d4d4;
+      transform: scale(1.1);
+    }
+    /* Animations */
+    @keyframes zoomIn {
+      from {
+        transform: scale(0);
         opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.popup, .terms-popup, .chat-popup {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
-    text-align: center;
-    z-index: 1001;
-    border-radius: 10px;
-    animation: slideIn 0.5s ease-out; /* Use slideIn animation */
-}
-
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    opacity: 0;
-    animation: fadeIn 0.3s forwards; /* Fade-in overlay */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-        /* Zoom-in Animation */
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Shake Animation */
-        @keyframes shake {
-            0%, 100% {
-                transform: translate(0);
-            }
-            25% {
-                transform: translate(-5px, 0);
-            }
-            50% {
-                transform: translate(5px, 0);
-            }
-            75% {
-                transform: translate(-5px, 0);
-            }
-        }
-
-        /* Flash Animation */
-        @keyframes flash {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.3;
-            }
-        }
-
-        /* Pulse Animation */
-      @keyframes pulse {
-    0%, 100% {
+      }
+      to {
         transform: scale(1);
+        opacity: 1;
+      }
     }
-    50% {
-        transform: scale(1.05);
+    /* Popup and Overlay Styles */
+    .overlay,
+    .popup,
+    .terms-popup,
+    .chat-popup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.95);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+      text-align: center;
+      z-index: 1001;
+      border-radius: 10px;
+      padding: 20px;
+      animation: slideIn 0.5s ease-out;
     }
-}
-
-.button {
-    display: inline-block;
-    background: #00ffff;
-    color: black;
-    padding: 20px 50px;
-    border-radius: 30px;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: pulse 2s infinite; /* Longer pulse duration */
-}
-
-.button:hover {
-    background-color: #00d4d4;
-    transform: scale(1.1); /* Slight scale on hover */
-    animation: none; /* Disable pulse on hover */
-}
-
-        /* Bounce In Animation */
-        @keyframes bounceIn {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            60% {
-                transform: scale(1.1);
-                opacity: 1;
-            }
-            80% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* Pop-in Animation */
-        @keyframes popIn {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-    </style>
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    .popup button,
+    .terms-popup button,
+    .chat-popup button {
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .popup button:hover,
+    .terms-popup button:hover,
+    .chat-popup button:hover {
+      background-color: #00d4d4;
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <!-- Logo Section -->
-        <div class="logo">
-            <img src="icon.png" alt="Talk with Strangers Logo">
-        </div>
-        
-        <!-- Title and Description -->
-        <h1>Talk With Strangers</h1>
-        <p>Meet and connect with people from around the world in real-time.</p>
-        
-        <!-- Call to Action Button -->
-        <a href="#" class="button" onclick="showPopup()">Join Now</a>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="panda-talk-logo.png" alt="Panda Talk Logo">
     </div>
+    <!-- Title and Description -->
+    <h1>Panda Talk</h1>
+    <p>Connect with strangers through real-time video or text chat.</p>
+    <!-- Call-to-Action Button -->
+    <a href="#" class="button" onclick="showPopup()">Join Now</a>
+  </div>
 
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
+  <!-- Overlay and Popups -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="age-popup">
+    <h3>Are you 18 or older?</h3>
+    <button onclick="handleAge('yes')">I am 18</button>
+    <button onclick="handleAge('no')">I am not 18</button>
+  </div>
+  <div class="terms-popup" id="terms-popup">
+    <h3>Terms and Conditions</h3>
+    <p>By continuing, you agree to our terms and conditions.</p>
+    <button onclick="acceptTerms()">Accept</button>
+    <button onclick="declineTerms()">Decline</button>
+  </div>
+  <div class="chat-popup" id="chat-popup">
+    <h3>Choose Your Chat Type</h3>
+    <button onclick="startVideoChat()">Video Chat</button>
+    <button onclick="startTextChat()">Text Chat</button>
+  </div>
 
-    <!-- Pop-up 1: Age Confirmation -->
-    <div class="popup" id="age-popup">
-        <h3>Are you 18 or older?</h3>
-        <button onclick="handleAge('yes')">I am 18</button>
-        <button onclick="handleAge('no')">I am not 18</button>
+  <!-- JavaScript for Pop-up Functionality -->
+  <script>
+    function showPopup() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('age-popup').style.display = 'block';
+    }
+    function handleAge(choice) {
+      document.getElementById('age-popup').style.display = 'none';
+      if (choice === 'yes') {
+        document.getElementById('terms-popup').style.display = 'block';
+      } else {
+        alert("You must be 18 or older to enter.");
+        document.getElementById('overlay').style.display = 'none';
+      }
+    }
+    function acceptTerms() {
+      document.getElementById('terms-popup').style.display = 'none';
+      document.getElementById('chat-popup').style.display = 'block';
+    }
+    function declineTerms() {
+      alert("You must accept the terms to proceed.");
+      document.getElementById('terms-popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function startVideoChat() {
+      window.location.href = 'video';
+    }
+    function startTextChat() {
+      window.location.href = 'chat';
+    }
+  </script>
+
+  <!-- Old Footer -->
+  <footer>
+    © 2024 AJ APPLICATIONS. All rights reserved. | 
+    <a href="pos-2" style="color: #00ffff;">Privacy Policy</a> | 
+    <a href="tos-2" style="color: #00ffff;">Terms and Conditions</a> | 
+    <a href="contact" style="color: #00ffff;">Contact Us</a>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panda Talk - Connect with Strangers</title>
+  <meta name="description" content="Panda Talk is a modern platform to connect with strangers via video or text chat.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="panda-talk-logo.png">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: rgba(30, 30, 30, 0.95);
+      padding: 50px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+      animation: zoomIn 1s ease-out;
+    }
+    /* Logo Styling */
+    .logo {
+      margin-bottom: 30px;
+    }
+    .logo img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    p {
+      font-size: 1.5em;
+      color: #b0b0b0;
+      margin-bottom: 30px;
+    }
+    .button {
+      display: inline-block;
+      background: #00ffff;
+      color: #000;
+      padding: 20px 50px;
+      border-radius: 30px;
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .button:hover {
+      background-color: #00d4d4;
+      transform: scale(1.1);
+    }
+    /* Animations */
+    @keyframes zoomIn {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    /* Popup and Overlay Styles */
+    .overlay,
+    .popup,
+    .terms-popup,
+    .chat-popup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.95);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+      text-align: center;
+      z-index: 1001;
+      border-radius: 10px;
+      padding: 20px;
+      animation: slideIn 0.5s ease-out;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+    @keyframes slideIn {
+      from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+    .popup button,
+    .terms-popup button,
+    .chat-popup button {
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .popup button:hover,
+    .terms-popup button:hover,
+    .chat-popup button:hover {
+      background-color: #00d4d4;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo">
+      <img src="panda-talk-logo.png" alt="Panda Talk Logo">
     </div>
+    <!-- Title and Description -->
+    <h1>Panda Talk</h1>
+    <p>Connect with strangers through real-time video or text chat.</p>
+    <!-- Call-to-Action Button -->
+    <a href="#" class="button" onclick="showPopup()">Join Now</a>
+  </div>
 
-    <!-- Pop-up 2: Terms and Conditions -->
-    <div class="terms-popup" id="terms-popup">
-        <h3>Terms and Conditions</h3>
-        <p>By continuing, you agree to our terms and conditions.</p>
-        <button onclick="acceptTerms()">Accept</button>
-        <button onclick="declineTerms()">Decline</button>
-    </div>
+  <!-- Overlay and Popups -->
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="age-popup">
+    <h3>Are you 18 or older?</h3>
+    <button onclick="handleAge('yes')">I am 18</button>
+    <button onclick="handleAge('no')">I am not 18</button>
+  </div>
+  <div class="terms-popup" id="terms-popup">
+    <h3>Terms and Conditions</h3>
+    <p>By continuing, you agree to our terms and conditions.</p>
+    <button onclick="acceptTerms()">Accept</button>
+    <button onclick="declineTerms()">Decline</button>
+  </div>
+  <div class="chat-popup" id="chat-popup">
+    <h3>Choose Your Chat Type</h3>
+    <button onclick="startVideoChat()">Video Chat</button>
+    <button onclick="startTextChat()">Text Chat</button>
+  </div>
 
-    <!-- Pop-up 3: Chat Options -->
-    <div class="chat-popup" id="chat-popup">
-        <h3>Choose Your Chat Type</h3>
-        <button onclick="startVideoChat()">Video Chat</button>
-        <button onclick="startTextChat()">Text Chat</button>
-    </div>
+  <!-- JavaScript for Pop-up Functionality -->
+  <script>
+    function showPopup() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('age-popup').style.display = 'block';
+    }
+    function handleAge(choice) {
+      document.getElementById('age-popup').style.display = 'none';
+      if (choice === 'yes') {
+        document.getElementById('terms-popup').style.display = 'block';
+      } else {
+        alert("You must be 18 or older to enter.");
+        document.getElementById('overlay').style.display = 'none';
+      }
+    }
+    function acceptTerms() {
+      document.getElementById('terms-popup').style.display = 'none';
+      document.getElementById('chat-popup').style.display = 'block';
+    }
+    function declineTerms() {
+      alert("You must accept the terms to proceed.");
+      document.getElementById('terms-popup').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+    function startVideoChat() {
+      window.location.href = 'video';
+    }
+    function startTextChat() {
+      window.location.href = 'chat';
+    }
+  </script>
 
-    <!-- Footer Section -->
-    <footer>
-    
-        &copy; 2024 AJ APPLICATIONS. All rights reserved. | 
-        <a href="pos-2" style="color: #00ffff;">Privacy Policy</a> | 
-        <a href="tos-2" style="color: #00ffff;">Terms and Conditions</a> | 
-        <a href="contact" style="color: #00ffff;">Contact Us</a>
-    </footer>
-
-    <!-- JavaScript for pop-up functionality -->
-    <script>
-        // Show the first pop-up (age confirmation)
-        function showPopup() {
-            document.getElementById('overlay').style.display = 'block';
-            document.getElementById('age-popup').style.display = 'block';
-        }
-
-        // Handle age confirmation
-        function handleAge(choice) {
-            document.getElementById('age-popup').style.display = 'none';
-            if (choice === 'yes') {
-                document.getElementById('terms-popup').style.display = 'block';
-            } else {
-                alert("You must be 18 or older to enter.");
-                document.getElementById('overlay').style.display = 'none'; // Hide overlay if not 18
-            }
-        }
-
-        // Accept terms and show chat options
-        function acceptTerms() {
-            document.getElementById('terms-popup').style.display = 'none';
-            document.getElementById('chat-popup').style.display = 'block';
-        }
-
-        // Decline terms
-        function declineTerms() {
-            alert("You must accept the terms to proceed.");
-            document.getElementById('terms-popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-        // Redirect to video chat page
-        function startVideoChat() {
-            window.location.href = 'video';  // Redirect to video.html
-        }
-
-        // Redirect to text chat page
-        function startTextChat() {
-            window.location.href = 'chat';  // Redirect to chat.html
-        }
-
-    </script>
-
+  <!-- Old Footer -->
+  <footer>
+    © 2024 AJ APPLICATIONS. All rights reserved. | 
+    <a href="pos-2" style="color: #00ffff;">Privacy Policy</a> | 
+    <a href="tos-2" style="color: #00ffff;">Terms and Conditions</a> | 
+    <a href="contact" style="color: #00ffff;">Contact Us</a>
+  </footer>
 </body>
 </html>
