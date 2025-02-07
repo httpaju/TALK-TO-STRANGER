@@ -98,11 +98,11 @@ ws.register('connected', async (data) => {
       .filter((x) => !!x)
       .map((x) => x.trim()) || []
 
-  let commonInterests = data.at(-1) || ''
-  const first = data.slice(0, -1)
+  let commonInterests = null;
+  /*const first = data.slice(0, -1)
   if (first.length) {
     commonInterests = `${first.join(', ')} and ${commonInterests}`
-  }
+  }*/
 
   $msgs.innerHTML = ''
   const status = document.createElement('div')
