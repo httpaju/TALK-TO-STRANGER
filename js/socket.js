@@ -1,4 +1,4 @@
-const WEBSOCKET_URL = "wss://aj-talk-to-stranger.onrender.com"
+const WEBSOCKET_URL = "wss://lotta.lol"
 
 if (!WEBSOCKET_URL) {
   throw new Error('Forgot to initialze some variables')
