@@ -2,29 +2,12 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics & Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-T9LVFKB3GD');
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-    crossorigin="anonymous"></script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AJ Talk to Stranger</title>
   <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AJ Talk to Stranger">
-  <meta property="og:url" content="https://aj-talk-to-stranger.onrender.com/">
-  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-  <meta property="og:description"
-    content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun!">
-  
   <link rel="icon" type="image/png" href="icon.png">
+
   <style>
     /* Light Mode */
     body {
@@ -33,7 +16,7 @@
       color: black;
       text-align: center;
       padding: 20px;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
     }
 
     /* Dark Mode */
@@ -76,11 +59,12 @@
       border-radius: 5px;
       cursor: pointer;
       font-size: 18px;
-      transition: 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
 
     .btn:hover {
       background: #ff2e00;
+      transform: scale(1.05);
     }
 
     .footer {
@@ -105,12 +89,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      transition: 0.3s;
+      transition: transform 0.4s ease, background 0.3s ease;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
     .theme-toggle:hover {
       background: #0056b3;
+      transform: rotate(360deg);
+    }
+
+    .theme-toggle:active {
+      transform: scale(0.9);
     }
   </style>
 </head>
@@ -126,7 +115,7 @@
       <button class="btn" onclick="startVideo()">Video Chat</button>
     </div>
 
-    <div class="footer">© 2025 AJ APPLICATIONS. All Rights Reserved.</div>
+    <div class="footer">© 2025 AJ Applications. All Rights Reserved.</div>
   </div>
 
   <!-- Floating Theme Button -->
@@ -134,7 +123,7 @@
 
   <script>
     function startChat() {
-      window.location.href = "text"; // Change this to your actual chat URL
+      window.location.href = "chat"; // Change this to your actual chat URL
     }
 
     function startVideo() {
@@ -148,6 +137,12 @@
       // Update button icon
       const themeButton = document.querySelector('.theme-toggle');
       themeButton.textContent = body.classList.contains("dark-mode") ? "☀️" : "🌙";
+
+      // Apply rotation animation
+      themeButton.style.transform = "rotate(360deg)";
+      setTimeout(() => {
+        themeButton.style.transform = "";
+      }, 400);
 
       // Save user preference
       localStorage.setItem("theme", body.classList.contains("dark-mode") ? "dark" : "light");
