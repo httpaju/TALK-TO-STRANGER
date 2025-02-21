@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Donation</title>
+  <meta name="description" content="Support us with a UPI donation." />
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: black;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .payment-btn {
+      background: #ffcc00;
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 10px;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .payment-btn:hover {
+      background: #ffdd44;
+    }
+    .payment-icon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Support Us with UPI Donation</div>
+    <p>Select your preferred payment method:</p>
+    <div class="payment-methods">
+      <button class="payment-btn" onclick="payWith('tez://upi/pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Google_Pay_Logo.svg" alt="Google Pay" class="payment-icon"> Google Pay
+      </button>
+      <button class="payment-btn" onclick="payWith('phonepe://upi/pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/PhonePe_Logo.png" alt="PhonePe" class="payment-icon"> PhonePe
+      </button>
+      <button class="payment-btn" onclick="payWith('paytmmp://pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Paytm_logo.png" alt="Paytm" class="payment-icon"> Paytm
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/BharatPe_Logo.png" alt="BharatPe" class="payment-icon"> BharatPe
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Amazon_Pay_logo.svg" alt="Amazon Pay" class="payment-icon"> Amazon Pay
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ajmal-applications@fam&pn=AJ APPLICATIONS')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Mobikwik_Logo.png" alt="MobiKwik" class="payment-icon"> MobiKwik
+      </button>
+    </div>
+    <p>Thank you for your support!</p>
+  </div>
+  <script>
+    function payWith(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>
