@@ -1,4 +1,4 @@
-const WEBSOCKET_URL = "wss://panda-talk.onrender.com"
+const WEBSOCKET_URL = "wss://streamora-9cvm.onrender.com"
 
 if (!WEBSOCKET_URL) {
   throw new Error('Forgot to initialze some variables')
